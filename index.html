@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="CSS/styles.css"/>
+
+    <!-- Scripts -->
+    <script src="JS/scripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <title>Biosite-Home</title>
+</head>
+
+<body>
+    <div class="backgroundWrap">
+        <img src="images/flower.jpg" width="100%" height="100%">
+    </div>
+    <nav>
+        <ul>
+            <li id="homeLi"><a id="homeLink" >Home</a></li>
+            <li id= "familyLi"><a id="familyLink" >Family Life</a></li>
+            <li id="childhoodLi"><a id="childhoodLink">Childhood</a></li>
+        </ul>
+    </nav>
+    <div class="carouselWrap">
+        <div class="imageWrap">
+            <img id="img1" class="mySlides" src="" width="250px">
+            <img id="img2" class="mySlides" src="" width="250px">
+            <img id="img3" class="mySlides" src="" width="250px">
+        </div>
+    </div>
+    <div class="captionWrap">
+        <p class="caption" id="caption"></p>
+    </div>
+  
+    
+  
+    <header class="titleWrap">
+        <h1 id="titleText" class="titleStyle"></h1>
+    </header>
+    <div class="descriptionWrap">
+        <p id="description" class="description">
+            
+        </p>
+        <p id="wordCount">
+
+        </p>
+    </div>
+</body>
+<script>
+$homeText="This is Mariza. Her full name is Mariza Michelle Medina. Mariza is a wonderful human being with a broad range of skill sets. She can sing, play guitar, cook, and do just about anything she sets her mind to. She enjoys learning how to do new things and doing projects that she sees on pinterest. She is a fan of every Disney Movie and likes all things Disney. Mariza is a loving, sweet, caring, and beautiful woman. She is a devoted Christian, and a wonderful Mother and amazing wife-to-be.";//89 words
+
+$familyText= "The majority of Mariza's Family is spent caring for her wonderful and beautiful Daighter Chloe. She enjoys teaching chloe new things about life and how to treat people. When she is not occupied with Chloe, Mariza Enjoys spending time with her fiance, Josh. She enjoys doing anything that allows her to spend quality time with her finace and child. THey are currently set to get married in October of this year. Her favorite pastimes with her family include going camping, or just hanging out and wathcing movies.";//87 words
+
+$childhoodText= "On January 14th, 1995 Mariza was born in Mesa, Arizona. She has 1 younger brother. As a child, Mariza spent a lot of her time with her fahter learning to do things that he enjoyed teaching her like working on cars. She spent a lot of time with her cousins and family  both running a church, and doing Missionary/Outreach for her church in a small town in Mexico where her family owned a ranch and a store. ";//78 words
+
+$homeCaption_1 = "She doesn't know her own beauty"; 
+$homeCaption_2 = "She is radiant beyond compare"; 
+$homeCaption_3 = "Her smile could melt the coldest ice"; 
+
+$chCaption_1 = "Merry Christmas";
+$chCaption_2 = "Baby Baller";
+$chCaption_3 = "Such a serious baby";
+
+$famCaption_1 = "Farms, Family, and the Fall";
+$famCaption_2 = "Blue really makes us pop";
+$famCaption_3 = "It's these moments that we will cherish";
+
+
+$homeLoad = function(){
+    $("#description").text($homeText);
+    $words=$.trim($homeText).split(" ");
+    $("#wordCount").html($words.length+" words");
+
+    $("#homeLi").addClass("active");
+    $("#familyLi").removeClass("active");
+    $("#childhoodLi").removeClass("active");
+
+    $("#img1").attr("src","images/home1.jpg");
+    $("#img2").attr("src","images/home2.jpg");
+    $("#img3").attr("src","images/home3.jpg");
+
+    $("#titleText").text("Mariza Medina");
+};
+
+$("#homeLink").click(function(){
+    $homeLoad();
+    
+});
+
+$(document).ready(function(){
+$homeLoad();
+   
+    
+});
+
+$("#familyLink").click(function(){
+    $("#description").text($familyText);
+    $words=$.trim($familyText).split(" ");
+    $("#wordCount").html($words.length+" words");
+
+    $(this).parent().addClass("active");
+    $("#homeLi").removeClass("active");
+    $("#childhoodLi").removeClass("active");
+
+    $("#img1").attr("src","images/fam1.jpg");
+    $("#img2").attr("src","images/fam2.jpg");
+    $("#img3").attr("src","images/fam3.jpg");
+    
+
+    $("#titleText").text("Mariza's Family Life");
+});
+
+$("#childhoodLink").click(function(){
+    $("#description").text($childhoodText);
+    $words=$.trim($childhoodText).split(" ");
+    $("#wordCount").html($words.length+" words");
+
+    $(this).parent().addClass("active");
+    $("#homeLi").removeClass("active");
+    $("#familyLi").removeClass("active");
+
+    $("#img1").attr("src","images/ch1.jpg");
+    $("#img2").attr("src","images/ch2.jpg");
+    $("#img3").attr("src","images/ch3.jpg");
+
+    $("#titleText").text("Mariza's Childhood");
+});
+
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  $y = $("#caption").text();
+  $z = $(".active").attr("id");
+
+  for (i = 0; i < x.length; i++) {
+    x[i].className += " none";
+    x[i].classList.remove("block");
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].className += " block"; 
+  x[myIndex-1].classList.remove("none");
+  $w = x[myIndex-1].id;
+  switch ($z) {
+        case "homeLi":
+            switch ($w) {
+                case "img1":
+                    $("#caption").text($homeCaption_1);
+                    break;
+                case "img2":
+                    $("#caption").text($homeCaption_2);
+                    break;
+                case "img3":
+                    $("#caption").text($homeCaption_3);
+                    break;
+            }
+            break;
+        case "familyLi":
+            switch ($w) {
+                    case "img1":
+                        $("#caption").text($famCaption_1);
+                        break;
+                    case "img2":
+                        $("#caption").text($famCaption_2);
+                        break;
+                    case "img3":
+                        $("#caption").text($famCaption_3);
+                        break;
+            }
+            break;
+        case "childhoodLi":
+            switch ($w) {
+                    case "img1":
+                        $("#caption").text($chCaption_1);
+                        break;
+                    case "img2":
+                        $("#caption").text($chCaption_2);
+                        break;
+                    case "img3":
+                        $("#caption").text($chCaption_3);
+                        break;
+            }
+            break;
+
+  
+      default:
+        $("#caption").text($homeCaption_1);
+          break;
+  }
+
+  setTimeout(carousel, 4000); // Change image every 4 seconds
+}
+</script>
+<footer>
+    <p>Developed by Joshua Hughes 2019</p>
+    <a href="https://jhughes.co/web200/biosite/">See Website</a>
+</footer>
+</html>

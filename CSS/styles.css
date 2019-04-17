@@ -1,0 +1,154 @@
+.backgroundWrap{
+    opacity: .5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* --------Nav Bar Styles----------- */
+nav{
+    width: 20%;
+    margin: auto;
+    text-align:center;
+    margin-top: 4%;
+    min-width: 771px;
+}
+
+nav ul{
+    list-style-type: none;
+    border-radius: 4ex;
+    padding: 20px;
+    overflow: hidden;
+    background-color: rgb(116, 36, 163);
+    margin: auto;
+    opacity: .6;
+}
+
+nav ul li {
+    display: inline;
+    padding: 20px;
+    border-right: solid 2px rgb(197, 148, 216);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav ul li:hover{
+    background-color: rgb(197, 148, 216);
+    cursor: pointer;
+}
+
+nav ul li:last-child{
+    border-right: none;
+}
+
+nav ul li a {
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.active{
+  background-color: rgb(197, 148, 216);
+}
+/* ------End Nav Bar Styles----------- */
+
+
+/*------ Carousel styles-------------- */
+body>.carouselWrap{
+  margin:auto; 
+  text-align: center;
+  width: 50%;
+  height: 30%;
+  line-height: 350px;
+  background-color: rgb(54, 47, 61,60%);
+  position: relative;
+  margin-top: 20px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  
+}
+.carouselWrap .mySlides{
+  margin: auto;
+  object-fit: contain;
+  min-width: 60%;
+  max-height: 350px;
+  vertical-align:middle;
+}
+
+#caption{
+  position: relative;
+ text-align: center;
+  color: rgb(255, 255, 255);
+   text-shadow: 4px 4px 8px #000000,4px 4px 8px #5c0377,18px 18px 20px #ffffff ;
+ margin-bottom:0;
+ background-color: rgb(54, 47, 61,60%);
+ width: 50%;
+ margin: auto;
+ border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+
+/*------End Carousel styles----------- */
+
+
+/*-------------Title styles----------- */
+.titleWrap{
+  margin-top: 5px;
+  width: 45%;
+  margin:auto;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.titleStyle{
+ 
+  color: white;
+  text-shadow: 4px 4px 8px #000000,4px 4px 8px #5c0377,18px 18px 20px #ffffff ;
+}
+h1{
+  font-size: 3.5em;
+}
+
+/*------End Title styles-------------- */
+
+.descriptionWrap{
+  width: 45%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.description{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 18px;
+}
+
+p#wordCount{
+  text-align: right;
+  font-size: 10px;
+}
+
+.block{
+  display: block;
+}
+ .none{
+   display: none;
+ }
+
+ footer{
+  margin: auto;
+  text-align: center;
+  bottom: 0;
+  right: 45%;
+  position: fixed;
+  color: rgba(0, 0, 0);
+  font-size: .8em;
+  display: inline-block;
+ }
+
+
+ 
